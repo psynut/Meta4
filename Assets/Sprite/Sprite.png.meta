@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 92a90ab8908aa4349b4b96cd76f3b7d8
-timeCreated: 1569124832
+timeCreated: 1569177588
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -12,6 +12,10 @@ TextureImporter:
     21300010: PlayerA_Stand_Sprite_2
     21300012: PlayerA_Stand_Sprite_3
     21300014: PlayerA_Stand_Sprite_4
+    21300016: PlayerA_Ball_Sprite_1
+    21300018: PlayerA_Ball_Sprite_2
+    21300020: PlayerA_Ball_Sprite_3
+    21300022: PlayerA_Ball_Sprite_4
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -138,7 +142,7 @@ TextureImporter:
         width: 30
         height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -151,7 +155,7 @@ TextureImporter:
         width: 29
         height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -164,7 +168,7 @@ TextureImporter:
         width: 29
         height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -174,6 +178,58 @@ TextureImporter:
         serializedVersion: 2
         x: 91
         y: 740
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PlayerA_Ball_Sprite_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 710
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PlayerA_Ball_Sprite_2
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 710
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PlayerA_Ball_Sprite_3
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 710
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PlayerA_Ball_Sprite_4
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 710
         width: 29
         height: 29
       alignment: 0
