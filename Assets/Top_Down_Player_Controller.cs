@@ -32,9 +32,10 @@ public class Top_Down_Player_Controller : MonoBehaviour {
 	void RotateTransform(float horz, float vert){
 		//https://answers.unity.com/questions/904038/how-do-you-convert-inputgetaxis-to-rotation-in-deg.html
 		//https://docs.unity3d.com/ScriptReference/Transform.Rotate.html
-		float myAngle = Mathf.Atan2 (Input.GetAxis ("Horizontal"),-Input.GetAxis ("Vertical")) * Mathf.Rad2Deg;
-		//float myAngle = Mathf.Atan2 (horz, -vert) * Mathf.Rad2Deg;
+
+		float myAngle = Mathf.Atan2 (horz, -vert) * Mathf.Rad2Deg;
+		Debug.Log ("Horizontal =" + horz + "     Vertical = " + vert + "      myAngle = " + myAngle);
+		transform.eulerAngles = new Vector3 (0, 0, myAngle);
 		//transform.Rotate(0, 0, myAngle, Space.World) - Worth keeping to trip out SPINNING SPRITES
-		transform.eulerAngles = new Vector3(0, 0, myAngle);
 	}
 }
