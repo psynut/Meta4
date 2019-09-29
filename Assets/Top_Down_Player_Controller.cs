@@ -7,15 +7,13 @@ public class Top_Down_Player_Controller : MonoBehaviour {
 	public float speedHorizaontal = 0.01f;
 	public float speedVertical = 0.01f;
 
-	private Rigidbody2D playerRB;
+	//private Rigidbody2D playerRB;
 
-	private float lastAngle;
+	private float myAngle;
 
 	// Use this for initialization
 	void Start () {
-		playerRB = GetComponent<Rigidbody2D>();
-		Debug.Log (playerRB);
-		Debug.Log ("Hello?");
+		//playerRB = GetComponent<Rigidbody2D>();
 	}
 	
 	// Update is called once per frame
@@ -37,12 +35,10 @@ public class Top_Down_Player_Controller : MonoBehaviour {
 
 		if (horz != 0 || vert != 0){
 			float myAngle = Mathf.Atan2 (horz, -vert) * Mathf.Rad2Deg;
-			Debug.Log ("My Angle = " + myAngle);
-			lastAngle = myAngle;
 			transform.eulerAngles = new Vector3 (0, 0, myAngle);
 			//transform.Rotate(0, 0, myAngle, Space.World) - Worth keeping to trip out SPINNING SPRITES
 		} else {
-			transform.eulerAngles = new Vector3 (0,0, lastAngle);
+			transform.eulerAngles = new Vector3 (0,0, myAngle);
 		}
 	}
 }
