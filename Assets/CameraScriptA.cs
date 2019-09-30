@@ -18,11 +18,26 @@ public class CameraScriptA : MonoBehaviour {
 		cameraHeight = myCamera.pixelHeight;
 
 	}
-	
+	 
 	// Update is called once per frame
 	void Update () {
 		Vector2 screenPos = myCamera.WorldToScreenPoint (player.position);
 		Debug.Log ("Target is " + screenPos.x + " pixels from the left");
 		Debug.Log ("Target is " + screenPos.y + " pixels from the buttom");
 	}
+
+	public PosPercScreen(int posX, int posY){
+		//keep track of the percentage of the screen the player's icon has moved to (in order to start moving camera)
+		double percX = 100*posX/cameraWidth;
+		double percY = 100 * posY / cameraHeight;
+		PosPercScreen myPPS = new PosPercScreen(percX, percY);
+		return myPPS;
+	}
+}
+
+class PosPercScreen{
+
+	float percX;
+	float percY;
+
 }
