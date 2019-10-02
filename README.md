@@ -16,6 +16,7 @@ Social has several metrics but has no control.
 
 
 Movement: Background moves from down to up on screen. The player can certainly move forward (down screen) quicker, but can only slow and stop the flow for seconds every so ofte (ever minute maybe). Player can freely move left and right on screen. (Or to make things trickier for programming - it could involve several different paths to take, but the camera will take a different fork depending on player's choice.)
+
 ![See the Game Map jpg](Game Map.jpg)
 
 There will be paths on the screen that give gradual upticks in metrics as a player moves over it. There will also be installations, institutions, and fixtures that provide windfall chunks, but payouts are still randomized to some extent.
