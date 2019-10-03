@@ -8,8 +8,10 @@ public class CameraScriptA : MonoBehaviour {
 	//camer.WorldToScreenPoiint is the transform's position to the camera pixels.
 
 	public Transform player;
+	[Tooltip("Parameter in percentage of screen that player can get to before camera starts moving")]
+	public float maxX = 80f, minX = 20f, maxY = 80f, minY=20f;
 	Camera myCamera;
-	int cameraWidth, cameraHeight;
+	private int cameraWidth, cameraHeight;
 
 	// Use this for initialization
 	void Start () {
@@ -24,20 +26,46 @@ public class CameraScriptA : MonoBehaviour {
 		Vector2 screenPos = myCamera.WorldToScreenPoint (player.position);
 		Debug.Log ("Target is " + screenPos.x + " pixels from the left");
 		Debug.Log ("Target is " + screenPos.y + " pixels from the buttom");
+		PercXY percxy = PosPercScreen (screenPos.x, screenPos.y);
+		if (percxy.percX > maxX) {
+
+		}
+		if (percxy.percX < minX) {
+
+		}
+		if (percxy.percY > maxY) {
+
+		}
+		if (percxy.percY < minY) {
+
+		}
 	}
 
-	public PosPercScreen(int posX, int posY){
+	public PercXY PosPercScreen (float posX, float posY){
 		//keep track of the percentage of the screen the player's icon has moved to (in order to start moving camera)
-		double percX = 100*posX/cameraWidth;
-		double percY = 100 * posY / cameraHeight;
-		PosPercScreen myPPS = new PosPercScreen(percX, percY);
+		float percX = 100*posX/cameraWidth;
+		float percY = 100 * posY / cameraHeight;
+		PercXY myPPS = new PercXY(percX, percY);
 		return myPPS;
+	}
+
+	private void followPlayer(){
+		
 	}
 }
 
-class PosPercScreen{
+public class PercXY{
 
-	float percX;
-	float percY;
+	public float percX;
+	public float percY;
+
+	public PercXY(float x, float y){
+		this.percX = x;
+		this.percY = y;
+	}
+
+	public void displayIt(){
+		Debug.Log ("PercX = " + this.percX + ", PercY = " + this.percY);
+	}
 
 }

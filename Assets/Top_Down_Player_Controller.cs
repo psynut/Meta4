@@ -34,7 +34,7 @@ public class Top_Down_Player_Controller : MonoBehaviour {
 		//https://docs.unity3d.com/ScriptReference/Transform.Rotate.html
 
 		if (horz != 0 || vert != 0){
-			float myAngle = Mathf.Atan2 (horz, -vert) * Mathf.Rad2Deg;
+			myAngle = Mathf.Atan2 (horz, -vert) * Mathf.Rad2Deg;
 			transform.eulerAngles = new Vector3 (0, 0, myAngle);
 			//transform.Rotate(0, 0, myAngle, Space.World) - Worth keeping to trip out SPINNING SPRITES
 		} else {
