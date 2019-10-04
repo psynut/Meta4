@@ -10,6 +10,8 @@ public class CameraScriptA : MonoBehaviour {
 	public Transform player;
 	[Tooltip("Parameter in percentage of screen that player can get to before camera starts moving")]
 	public float maxX = 80f, minX = 20f, maxY = 80f, minY=20f;
+	[Range (0.1f, 5.00f)]
+	public float cameraSpeed=1;
 	Camera myCamera;
 	private int cameraWidth, cameraHeight;
 
@@ -27,17 +29,18 @@ public class CameraScriptA : MonoBehaviour {
 		Debug.Log ("Target is " + screenPos.x + " pixels from the left");
 		Debug.Log ("Target is " + screenPos.y + " pixels from the buttom");
 		PercXY percxy = PosPercScreen (screenPos.x, screenPos.y);
+		percxy.displayIt();
 		if (percxy.percX > maxX) {
-	//		myCamera.transform.Translate(player.position.x 
+			myCamera.transform.Translate ((player.position.x - myCamera.transform.position.x) * Time.deltaTime * cameraSpeed, 0, 0);
 		}
 		if (percxy.percX < minX) {
-
+			myCamera.transform.Translate ((player.position.x - myCamera.transform.position.x) * Time.deltaTime * cameraSpeed, 0, 0);
 		}
 		if (percxy.percY > maxY) {
-
+			myCamera.transform.Translate (0, (player.position.y - myCamera.transform.position.y) * Time.deltaTime * cameraSpeed, 0);
 		}
 		if (percxy.percY < minY) {
-
+			myCamera.transform.Translate (0, (player.position.y - myCamera.transform.position.y) * Time.deltaTime * cameraSpeed, 0);
 		}
 	}
 
