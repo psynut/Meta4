@@ -25,21 +25,17 @@ public class CameraScriptA : MonoBehaviour {
 	 
 	// Update is called once per frame
 	void Update () {
+		FollowPlayer();
+	}
+
+	void FollowPlayer ()
+	{
 		Vector2 screenPos = myCamera.WorldToScreenPoint (player.position);
-		Debug.Log ("Target is " + screenPos.x + " pixels from the left");
-		Debug.Log ("Target is " + screenPos.y + " pixels from the buttom");
 		PercXY percxy = PosPercScreen (screenPos.x, screenPos.y);
-		percxy.displayIt();
-		if (percxy.percX > maxX) {
+		if (percxy.percX > maxX || percxy.percX < minX) {
 			myCamera.transform.Translate ((player.position.x - myCamera.transform.position.x) * Time.deltaTime * cameraSpeed, 0, 0);
 		}
-		if (percxy.percX < minX) {
-			myCamera.transform.Translate ((player.position.x - myCamera.transform.position.x) * Time.deltaTime * cameraSpeed, 0, 0);
-		}
-		if (percxy.percY > maxY) {
-			myCamera.transform.Translate (0, (player.position.y - myCamera.transform.position.y) * Time.deltaTime * cameraSpeed, 0);
-		}
-		if (percxy.percY < minY) {
+		if (percxy.percY > maxY || percxy.percY < minY) {
 			myCamera.transform.Translate (0, (player.position.y - myCamera.transform.position.y) * Time.deltaTime * cameraSpeed, 0);
 		}
 	}
@@ -51,10 +47,7 @@ public class CameraScriptA : MonoBehaviour {
 		PercXY myPPS = new PercXY(percX, percY);
 		return myPPS;
 	}
-
-	private void followPlayer(){
 		
-	}
 }
 
 public class PercXY{
