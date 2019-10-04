@@ -28,7 +28,7 @@ public class CameraScriptA : MonoBehaviour {
 		Debug.Log ("Target is " + screenPos.y + " pixels from the buttom");
 		PercXY percxy = PosPercScreen (screenPos.x, screenPos.y);
 		if (percxy.percX > maxX) {
-
+	//		myCamera.transform.Translate(player.position.x 
 		}
 		if (percxy.percX < minX) {
 

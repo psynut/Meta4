@@ -25,8 +25,8 @@ public class Top_Down_Player_Controller : MonoBehaviour {
 	}
 
 	void Move(float horz, float vert){
-		transform.Translate(horz * speedHorizaontal, 0, 0, Space.World);
-		transform.Translate(0,vert * speedVertical, 0, Space.World);
+		transform.Translate(horz * speedHorizaontal*Time.deltaTime, 0, 0, Space.World);
+		transform.Translate(0,vert * speedVertical*Time.deltaTime, 0, Space.World);
 	}
 
 	void RotateTransform(float horz, float vert){
